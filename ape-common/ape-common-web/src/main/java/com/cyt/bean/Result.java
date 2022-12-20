@@ -7,10 +7,6 @@ import java.io.Serializable;
 @Data
 public class Result<T> implements Serializable {
 
-    private Result() {
-
-    }
-
     private Boolean success;
 
     private Integer code;
