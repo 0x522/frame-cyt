@@ -1,8 +1,6 @@
 package com.cyt.user.entity.po;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.util.Date;
@@ -11,22 +9,28 @@ import java.util.Date;
 @Data
 public class UserPo {
 
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     private String name;
 
     private Integer age;
 
+    @TableField(fill = FieldFill.INSERT)
     private String createBy;
 
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
+    @TableField(fill = FieldFill.UPDATE)
     private String updateBy;
 
+    @TableField(fill = FieldFill.UPDATE)
     private Date updateTime;
 
+    @TableField(fill = FieldFill.INSERT)
     private Integer deleteFlag;
 
+    @TableField(fill = FieldFill.INSERT)
     private Integer version;
 }
