@@ -1,5 +1,6 @@
 package com.cyt.user.controller;
 
+import com.cyt.bean.Result;
 import com.cyt.user.entity.dto.UserDto;
 import com.cyt.user.entity.req.UserReq;
 import com.cyt.user.service.UserService;
@@ -17,10 +18,10 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public Integer addUser(@RequestBody UserReq userReq) {
+    public Result addUser(@RequestBody UserReq userReq) {
         UserDto userDto = new UserDto();
         BeanUtils.copyProperties(userReq, userDto);
-        return userService.addUser(userDto);
+        return Result.ok(userService.addUser(userDto));
     }
 
 }
