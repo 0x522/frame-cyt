@@ -5,7 +5,6 @@ import com.cyt.user.entity.dto.UserDto;
 import com.cyt.user.entity.po.UserPo;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public interface UserService {

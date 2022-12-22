@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cyt.entity.PageResult;
+import com.cyt.user.convert.UserConverter;
 import com.cyt.user.entity.dto.UserDto;
 import com.cyt.user.entity.po.UserPo;
 import com.cyt.user.mapper.UserMapper;
@@ -20,8 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int addUser(UserDto userDto) {
-        UserPo userPo = new UserPo();
-        BeanUtils.copyProperties(userDto, userPo);
+        UserPo userPo = UserConverter.INSTANCE.convertUserDtoToUserPo(userDto);
         return userMapper.insert(userPo);
     }
 

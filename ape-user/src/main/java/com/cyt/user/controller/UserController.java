@@ -2,6 +2,7 @@ package com.cyt.user.controller;
 
 import com.cyt.bean.Result;
 import com.cyt.entity.PageResult;
+import com.cyt.user.convert.UserConverter;
 import com.cyt.user.entity.dto.UserDto;
 import com.cyt.user.entity.po.UserPo;
 import com.cyt.user.entity.req.UserListReq;
@@ -21,8 +22,7 @@ public class UserController {
 
     @PostMapping
     public Result addUser(@RequestBody UserReq userReq) {
-        UserDto userDto = new UserDto();
-        BeanUtils.copyProperties(userReq, userDto);
+        UserDto userDto = UserConverter.INSTANCE.convertUserReqToUserDto(userReq);
         return Result.ok(userService.addUser(userDto));
     }
 
