@@ -44,6 +44,8 @@ public class RedisUtil {
     }
 
     public boolean setNx(String key, String value, Long time, TimeUnit timeUnit) {
+        //setnx
+        //不存在key 再set
         return redisTemplate.opsForValue().setIfAbsent(key, value, time, timeUnit);
     }
 

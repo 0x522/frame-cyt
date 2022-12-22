@@ -12,7 +12,7 @@ public class InitCache implements CommandLineRunner {
     // 项目启动后执行
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("缓存预热");
+        System.out.println("load pre cache!");
 
         ApplicationContext applicationContext = SpringContextUtil.getApplicationContext();
         //拿到抽象类下面的继承类
