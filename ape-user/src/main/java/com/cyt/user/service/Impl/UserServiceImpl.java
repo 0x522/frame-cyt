@@ -1,5 +1,6 @@
 package com.cyt.user.service.Impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -7,6 +8,7 @@ import com.cyt.entity.PageResult;
 import com.cyt.user.convert.UserConverter;
 import com.cyt.user.entity.dto.UserDto;
 import com.cyt.user.entity.po.UserPo;
+import com.cyt.user.entity.vo.UserVo;
 import com.cyt.user.mapper.UserMapper;
 import com.cyt.user.service.UserService;
 import org.springframework.beans.BeanUtils;
@@ -50,6 +52,15 @@ public class UserServiceImpl implements UserService {
             return userMapper.update(new UserPo(), uw);
         }
         return null;
+    }
+
+    @Override
+    public UserVo getUserById(Long id) {
+        UserPo userById = userMapper.getUserById(id);
+        UserVo userVo = new UserVo();
+        userVo.setAge(userById.getAge());
+        userVo.setName(userById.getName());
+        return userVo;
     }
 
 }

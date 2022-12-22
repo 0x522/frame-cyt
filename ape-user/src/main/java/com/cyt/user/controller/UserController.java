@@ -10,7 +10,10 @@ import com.cyt.user.service.UserService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 @RestController
 @RequestMapping("/user")
@@ -25,6 +28,13 @@ public class UserController {
     public Result addUser(@RequestBody UserReq userReq) {
         UserDto userDto = UserConverter.INSTANCE.convertUserReqToUserDto(userReq);
         return Result.ok(userService.addUser(userDto));
+    }
+
+    @GetMapping("/{id}")
+    // 禁用Cacheable 可能造成业务缓存雪崩
+    @Cacheable(cacheNames = "user_id", key = "'id'+#root.target.getNowDay()+#id")
+    public Result getUserById(@PathVariable Long id) {
+        return Result.ok(userService.getUserById(id));
     }
 
     @DeleteMapping("/{id}")
@@ -45,5 +55,8 @@ public class UserController {
         return Result.ok(userService.getUserPage(userDto));
     }
 
+    public Date getNowDay() {
+        return new Date();
+    }
 
 }
