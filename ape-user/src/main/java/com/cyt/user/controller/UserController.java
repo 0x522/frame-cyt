@@ -1,19 +1,20 @@
 package com.cyt.user.controller;
 
 import com.cyt.bean.Result;
-import com.cyt.entity.PageResult;
 import com.cyt.user.convert.UserConverter;
 import com.cyt.user.entity.dto.UserDto;
 import com.cyt.user.entity.po.UserPo;
 import com.cyt.user.entity.req.UserListReq;
 import com.cyt.user.entity.req.UserReq;
 import com.cyt.user.service.UserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@Api(tags = "用户Controller")
 public class UserController {
     //Restful
 

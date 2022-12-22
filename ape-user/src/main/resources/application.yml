@@ -36,3 +36,13 @@ mybatis-plus:
       logic-delete-field: delete_flag
       logic-delete-value: 1
       logic-not-delete-value: 0
+  mapper-locations: classpath:mapper/*.xml
+
+swagger:
+  base-package: com.cyt
+  title: ape-frame
+  contact-name: address
+  contact-url: 0x522.github.com
+  contact-email: chenyuntao1997@163.com
+  version: V1.0
+  description: 从0到1脚手架
