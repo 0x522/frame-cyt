@@ -2,10 +2,15 @@ package com.cyt.user.controller;
 
 import com.cyt.redis.util.RedisShareLockUtil;
 import com.cyt.redis.util.RedisUtil;
+import com.cyt.tool.Base64Utils;
+import com.cyt.tool.PinYin4jUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.UnsupportedEncodingException;
 
 @RestController
 @Slf4j
@@ -35,4 +40,23 @@ public class TestController {
         }
         log.info("输出所用时间{}", System.currentTimeMillis() - startTime);
     }
+
+    @GetMapping("/testPinyin")
+    public void testPinyin(@RequestParam String input) {
+        String pinYin = PinYin4jUtils.getPinYin(input);
+        log.info("input convert to {}", pinYin);
+    }
+
+    @GetMapping("/testBase64")
+    public void testBase64(@RequestParam String input) {
+        try {
+            String encode = Base64Utils.encode(input);
+            log.info("加密后的input:{}", encode);
+            String decode = Base64Utils.decode(encode);
+            log.info("是否和输入相等{}", input.equals(decode));
+        } catch (Exception e) {
+            log.error("异常");
+        }
+    }
+
 }

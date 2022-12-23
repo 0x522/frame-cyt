@@ -31,7 +31,7 @@ public class LogAspect {
         Object responseObj = pjp.proceed();
         String resp = new Gson().toJson(responseObj);
         Long endTime = System.currentTimeMillis();
-        log.info("{},response:{},costTime:{}secondMills", methodName, resp, endTime - startTime);
+        log.info("{},response:{},costTime:{} millis", methodName, resp, endTime - startTime);
         return responseObj;
     }
 }

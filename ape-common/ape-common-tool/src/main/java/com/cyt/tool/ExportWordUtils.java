@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 导出Word工具
  */
-public class ExportWordUtil {
+public class ExportWordUtils {
     private static final String SUFFIX = ".doc";
 
     private static Configuration configuration = null;
@@ -20,7 +20,7 @@ public class ExportWordUtil {
     static {
         configuration = new Configuration();
         configuration.setDefaultEncoding("utf-8");
-        configuration.setClassForTemplateLoading(ExportWordUtil.class, "/template/word");
+        configuration.setClassForTemplateLoading(ExportWordUtils.class, "/template/word");
     }
 
     public static void exportWord(Map map, String title, String ftlName) throws Exception {

@@ -55,6 +55,11 @@
             <version>${ape.common.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.cyt</groupId>
+            <artifactId>ape-common-tool</artifactId>
+            <version>${ape.common.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
         </dependency>
