@@ -32,7 +32,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     // 禁用Cacheable 可能造成业务缓存雪崩
-    @Cacheable(cacheNames = "user_id", key = "'id'+#root.target.getNowDay()+#id")
+//    @Cacheable(cacheNames = "user_id", key = "'id'+#root.target.getNowDay()+#id")
     public Result getUserById(@PathVariable Long id) {
         return Result.ok(userService.getUserById(id));
     }
