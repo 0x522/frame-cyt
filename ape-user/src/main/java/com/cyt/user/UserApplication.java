@@ -7,7 +7,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@MapperScan(value = "com.cyt.*.mapper")
+@MapperScan(value = "com.cyt.*.dao")
 @ComponentScan(value = "com.cyt")
 @EnableCaching
 public class UserApplication {

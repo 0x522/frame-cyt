@@ -1,6 +1,5 @@
 package com.cyt.user.service.Impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -9,9 +8,8 @@ import com.cyt.user.convert.UserConverter;
 import com.cyt.user.entity.dto.UserDto;
 import com.cyt.user.entity.po.UserPo;
 import com.cyt.user.entity.vo.UserVo;
-import com.cyt.user.mapper.UserMapper;
+import com.cyt.user.dao.UserMapper;
 import com.cyt.user.service.UserService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
