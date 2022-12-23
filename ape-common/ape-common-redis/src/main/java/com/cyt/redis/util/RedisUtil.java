@@ -1,6 +1,5 @@
 package com.cyt.redis.util;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +9,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Component
-@Slf4j
 public class RedisUtil {
 
     @Resource

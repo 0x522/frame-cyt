@@ -7,7 +7,7 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://127.0.0.1:3306/ape-frame?serverTimeZone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/ape-frame?serverTimeZone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
     druid:
       initial-size: 20
       min-idle: 20
@@ -35,7 +35,6 @@ spring:
         max-idle: 8
         max-wait: -1
         min-idle: 0
-
 sql:
   beauty:
     display: true
@@ -57,3 +56,6 @@ swagger:
   contact-email: chenyuntao1997@163.com
   version: V1.0
   description: 从0到1脚手架
+
+logging:
+  config: classpath:log4j-spring.xml
