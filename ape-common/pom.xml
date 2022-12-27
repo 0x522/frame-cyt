@@ -23,6 +23,8 @@
         <module>ape-common-redis</module>
         <module>ape-common-swagger</module>
         <module>ape-common-starter</module>
+        <module>ape-common-tool</module>
+        <module>ape-common-websocket</module>
     </modules>
 
     <dependencyManagement>
@@ -55,6 +57,16 @@
             <dependency>
                 <groupId>com.cyt</groupId>
                 <artifactId>ape-common-log</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyt</groupId>
+                <artifactId>ape-common-tool</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyt</groupId>
+                <artifactId>ape-common-websocket</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
