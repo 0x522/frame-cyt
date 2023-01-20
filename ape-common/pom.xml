@@ -25,6 +25,7 @@
         <module>ape-common-starter</module>
         <module>ape-common-tool</module>
         <module>ape-common-websocket</module>
+        <module>ape-common-test</module>
     </modules>
 
     <dependencyManagement>
@@ -67,6 +68,11 @@
             <dependency>
                 <groupId>com.cyt</groupId>
                 <artifactId>ape-common-websocket</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyt</groupId>
+                <artifactId>ape-common-test</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
