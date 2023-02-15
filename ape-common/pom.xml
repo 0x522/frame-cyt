@@ -17,6 +17,7 @@
     <description>common公用组件包</description>
 
     <modules>
+        <module>ape-common-job</module>
         <module>ape-common-log</module>
         <module>ape-common-web</module>
         <module>ape-common-mybatis-plus</module>
@@ -73,6 +74,11 @@
             <dependency>
                 <groupId>com.cyt</groupId>
                 <artifactId>ape-common-test</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyt</groupId>
+                <artifactId>ape-common-job</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
